@@ -80,10 +80,19 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI() {
+        setDefaultValue();
         alsoKnownAs_tv.setText(convertToString(sandwich.getAlsoKnownAs()));
         placeOfOrigin_tv.setText(sandwich.getPlaceOfOrigin());
         description_tv.setText(sandwich.getDescription());
         ingredients_tv.setText(convertToString(sandwich.getIngredients()));
+    }
+
+    private void setDefaultValue() {
+
+        alsoKnownAs_tv.setText("--Also known as--");
+        placeOfOrigin_tv.setText("--Place of Origin");
+        description_tv.setText("--Description--");
+        ingredients_tv.setText("--Ingredients list");
     }
 
     private String convertToString(List<String> stringList) {
